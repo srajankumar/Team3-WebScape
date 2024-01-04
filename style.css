@@ -32,3 +32,38 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
+/* Basic styling for header, navigation, and main content */
+
+nav,
+main {
+  /* margin: 20px; */
+}
+
+nav {
+  background-color: #333;
+  /* padding: 10px; */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+/* Style for footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}

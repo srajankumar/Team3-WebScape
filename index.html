@@ -65,28 +65,37 @@
               <div class="flex space-x-4">
                 <!-- Current: "bg-green-900 text-white", Default: "text-green-800 font-bold hover:bg-green-700 hover:text-white" -->
                 <a
-                  href="/service.html"
+                  href="/index.html"
                   class="bg-green-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  aria-current="page"
+                  >Home</a
+                >
+               
+                <a
+                  href="/service.html"
+                  class="text-green-800 font-bold rounded-md px-3 py-2 text-sm font-medium"
                   aria-current="page"
                   >Services</a
                 >
+
                 <a
-                  href="#"
+                href="/map.html"
+                class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >Interactive Map</a
+              >
+                <a
+                  href="#pickup"
                   class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >Pick up</a
                 >
+               
                 <a
-                  href=""
-                  class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                  >Interactive Map</a
-                >
-                <a
-                  href="#"
+                  href="#process"
                   class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >Recycling Process</a
                 >
                 <a
-                  href="#"
+                  href="#educational"
                   class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >Educational Resources</a
                 >
@@ -97,32 +106,39 @@
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="sm:hidden" id="mobile-menu">
+      <div class="sm:hidden bg-white" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
           <!-- Current: "bg-green-900 text-white", Default: "text-green-800 font-bold hover:bg-green-700 hover:text-white" -->
+          
           <a
-            href="#"
+            href="/index.html"
             class="bg-green-900 text-white block rounded-md px-3 py-2 text-base font-medium"
             aria-current="page"
-            >Services</a
+            >Home</a
           >
+         
           <a
-            href="#"
+          href="/service.html"
+          class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+          >Services</a
+        >
+          <a
+            href="#pickup"
             class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
             >Pick-Up</a
           >
           <a
-            href="#"
+            href="/map.html"
             class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
             >Interactive Map</a
           >
           <a
-            href="#"
+            href="#process"
             class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
             >Recycling Process</a
           >
           <a
-            href="#"
+            href="#educational"
             class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
             >Educational Resources</a
           >
@@ -144,6 +160,7 @@
                 E-Waste Recycling Solutions
               </h1>
             </div>
+            
             <p class="text-xl text-muted-foreground">
               Your partner in sustainable technology disposal
             </p>
@@ -178,11 +195,11 @@
       <!-- Pick-Up Request Form -->
       <section id="pickup" class="mt-10 px-4">
         <h2
-          class="text-3xl mb-4 py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+          class="text-3xl text-center mb-4 py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
         >
           Pick-Up Request
         </h2>
-        <div class="md:grid md:grid-cols-2">
+        <div >
           <div class="flex-1">
             <form
               action="#"
@@ -272,7 +289,7 @@
       <!-- Interactive Map Section -->
       <section>
         <h2
-          class="text-3xl py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+          class="text-3xl text-center py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
         >
           Interactive Map
         </h2>
@@ -289,7 +306,7 @@
         <div>
           <div class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
             <h2
-              class="text-3xl mb-4 py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+              class="text-3xl text-center mb-4 py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
             >
               Recycling Process
             </h2>
@@ -426,14 +443,18 @@
         <div class="flex flex-col">
           <div class="flex flex-col">
             <h1
-              class="xl:text-5xl md:text-4xl py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+              class="xl:text-5xl text-center md:text-4xl py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
             >
               E-Waste Recycling Solutions
             </h1>
           </div>
-          <p class="text-xl text-muted-foreground">
-            Your partner in sustainable technology disposal
-          </p>
+         
+          <div class="py-8">
+            <p class="text-center text-xl md:text-2xl">
+                Your partner in sustainable technology disposal
+            </p>
+          </div>
+       
           <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             <!-- Cards -->
             <div class="bg-white rounded-lg shadow-md">

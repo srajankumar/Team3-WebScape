@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="style.css" />
     <title>E-Waste Recycling</title>
   </head>
@@ -151,6 +152,7 @@
       <section id="map">
         <h2>Interactive Map</h2>
         <!-- Include an interactive map (Google Maps, Leaflet, etc.) -->
+        <div id='map' style='width: 400px; height: 300px; margin: 0 auto;'></div>
       </section>
 
       <!-- Recycling Process Section -->
@@ -180,5 +182,13 @@
       integrity="sha256-..."
       crossorigin="anonymous"
     />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoidGVqYXMtZ2siLCJhIjoiY2xud3NsNmc5MGR2NDJtbXhnaDR5YXI4dSJ9.1xnoW8szgMdfpdq4sI7Yzg';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11'
+        });
+    </script>
   </body>
 </html>

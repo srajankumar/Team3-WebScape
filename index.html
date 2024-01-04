@@ -3,14 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>E-Waste Recycling</title>
   </head>
   <body>
     <!-- Header Section -->
     <header>
-      <h1 class="bg-green-500">E-Waste Recycling Solutions</h1>
-      <p>Your partner in sustainable technology disposal</p>
+        <div class="container relative min-h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+            <div class="lg:p-8">
+                <div class="mx-auto flex flex-col justify-center space-y-6 w-[350px]">
+                  <div class="flex flex-col space-y-2 text-center">
+                    <h1 class="text-2xl font-semibold tracking-tight">
+                        E-Waste Recycling Solutions                    </h1>
+                  </div>
+                  <UserAuthForm />
+                  <p class="px-8 text-center text-sm text-muted-foreground">
+                    Your partner in sustainable technology disposal
+                  </p>
+                </div>
+              </div>
+            <div class="relative hidden h-full flex-col bg-muted text-white lg:flex dark:border-r">
+              <img
+                src="/hero.webp"
+                class="relative bg-black object-cover w-full h-full z-20"
+                alt=""
+              ></img>
+            </div>    
+          </div>
+      <!-- <h1 class="bg-green-500">E-Waste Recycling Solutions</h1>
+      <p>Your partner in sustainable technology disposal</p> -->
     </header>
 
     <!-- Navigation Menu -->

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="style.css" />
     <title>E-Waste Recycling</title>
-  </head>
-  <body>
-        <!-- navbar -->
-        <nav class="fixed z-50 top-0 left-0 w-full h-16 backdrop-blur-md">
+</head>
+
+<body>
+    <!-- navbar -->
+         <!-- navbar -->
+         <nav class="fixed z-50 top-0 left-0 w-full h-16 backdrop-blur-md">
             <div class="mx-auto">
                 <div class="relative flex h-16 items-center justify-between">
                     <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -53,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-                   
+                  
                 </div>
             </div>
         
@@ -120,55 +123,119 @@
 
     <!-- Main Content Section -->
     <main>
-      <!-- Pick-Up Request Form -->
-      <section id="pickup">
-        <h2>Pick-Up Request</h2>
-        <form action="#" method="POST">
-          <!-- Include form fields and submit button -->
-        </form>
-      </section>
+        <!-- Pick-Up Request Form -->
+        <section id="pickup">
+            <h2 class="
+            text-3xl py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight
+            ">Pick-Up Request</h2>
+            <form action="#" method="POST" class="
+            grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-8 shadow-lg p-10 rounded-lg  px-4
+        ">
+                <!-- Include form fields and submit button -->
+                <div class="sm:col-span-4">
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                    <div class="mt-2">
+                        <div
+                            class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                            <input type="text" name="username" id="email" autocomplete="email"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                placeholder="janesmith@gmail.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+                    <div class="mt-2">
+                        <div
+                            class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                            <input type="text" name="name" id="name" autocomplete="email"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                placeholder="sam">
+                        </div>
+                    </div>
+                </div>
 
-      <!-- Interactive Map Section -->
-      <section id="map">
-        <h2>Interactive Map</h2>
-        <!-- Include an interactive map (Google Maps, Leaflet, etc.) -->
-        <div id='map' style='width: 400px; height: 300px; margin: 0 auto;'></div>
-      </section>
 
-      <!-- Recycling Process Section -->
-      <section id="process">
-        <h2>Recycling Process</h2>
-        <!-- Include visuals and descriptions of the recycling process -->
-      </section>
+                <div class="sm:col-span-4">
+                    <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone</label>
+                    <div class="mt-2">
+                        <div
+                            class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                            <input type="text" name="phone" id="phone" autocomplete="email"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                placeholder="1234567890">
+                        </div>
+                    </div>
 
-      <!-- Educational Resources Section -->
-      <section id="educational">
-        <h2>Educational Resources</h2>
-        <!-- Include articles, guides, and infographics -->
-      </section>
+                    <button type="submit"
+                        class="inline-flex mt-4 items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                        Submit
+                    </button>
+            </form>
+        </section>
+
+        <!-- Interactive Map Section -->
+        <section>
+            <h2
+                class="text-3xl py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight">
+                Interactive Map</h2>
+            <!-- Include an interactive map (Google Maps, Leaflet, etc.) -->
+            <div class="container relative  flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0 mx-auto md:mx-0"
+                id='map' style='width: 400px; height: 300px;'></div>
+        </section>
+
+        <!-- Recycling Process Section -->
+        <section id="process">
+            <h2>Recycling Process</h2>
+            <!-- Include visuals and descriptions of the recycling process -->
+        </section>
+
+        <!-- Educational Resources Section -->
+        <section id="educational">
+            <h2>Educational Resources</h2>
+            <!-- Include articles, guides, and infographics -->
+        </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-      <p>&copy; 2024 E-Waste Recycling Solutions</p>
+        <p>&copy; 2024 E-Waste Recycling Solutions</p>
     </footer>
 
     <!-- JavaScript file -->
     <script src="script.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      integrity="sha256-..."
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+        integrity="sha256-..." crossorigin="anonymous" />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoidGVqYXMtZ2siLCJhIjoiY2xud3NsNmc5MGR2NDJtbXhnaDR5YXI4dSJ9.1xnoW8szgMdfpdq4sI7Yzg';
+
+        // Create map centered on a default location
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-74.5, 40], // Default center (New York City)
+            zoom: 9 // Default zoom level
         });
+
+        // Use Geolocation API to get the user's current location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    var userLocation = [position.coords.longitude, position.coords.latitude];
+
+                    // Update map center to user's location
+                    map.setCenter(userLocation);
+                },
+                function (error) {
+                    console.error('Error getting user location:', error.message);
+                }
+            );
+        } else {
+            console.error('Geolocation is not supported by this browser.');
+        }
     </script>
-  </body>
+</body>
+
 </html>

@@ -1,49 +1,87 @@
 /* Reset some default styles */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
+  min-height: 100vh;
+  background-image: url("/assets/bg.jpg");
+  background-repeat: no-repeat;
 }
 
-/* Basic styling for header, navigation, and main content */
-header, nav, main {
-    margin: 20px;
+.service-bg {
+  height: 40vh;
+  position: relative;
+  background-image: url("/assets/ewaste-service.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100vw;
+  background-position: 50%;
+  isolation: isolate;
 }
 
-header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
+.service-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+nav,
+main {
+  /* margin: 20px; */
 }
 
 nav {
-    background-color: #333;
-    padding: 10px;
+  backdrop-filter: blur(10px);
+  /* padding: 10px; */
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 main {
-    background-color: #f9f9f9;
-    padding: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
 
 /* Style for footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+.glassmorph {
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.1px);
+  -webkit-backdrop-filter: blur(4.1px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+.service {
+  overflow-x: hidden;
 }

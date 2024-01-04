@@ -1,72 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>E-Waste Recycling</title>
-</head>
-<body>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <!-- navbar -->
+    <nav class="fixed z-50 top-0 left-0 w-full h-16 backdrop-blur-md">
+      <div class="mx-auto">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-green-400 hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="flex flex-shrink-0 items-center"></div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-green-900 text-white", Default: "text-green-800 font-bold hover:bg-green-700 hover:text-white" -->
+                <a
+                  href="/index.html"
+                  class="bg-green-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  aria-current="page"
+                  >Home</a
+                >
+               
+                <a
+                  href="/service.html"
+                  class="text-green-800 font-bold rounded-md px-3 py-2 text-sm font-medium"
+                  aria-current="page"
+                  >Services</a
+                >
+
+                <a
+                href="/map.html"
+                class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >Interactive Map</a
+              >
+                <a
+                  href="#pickup"
+                  class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Pick up</a
+                >
+               
+                <a
+                  href="#process"
+                  class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Recycling Process</a
+                >
+                <a
+                  href="#educational"
+                  class="text-green-800 font-bold hover:bg-green-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Educational Resources</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden bg-white" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <!-- Current: "bg-green-900 text-white", Default: "text-green-800 font-bold hover:bg-green-700 hover:text-white" -->
+          
+          <a
+            href="/index.html"
+            class="bg-green-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+            aria-current="page"
+            >Home</a
+          >
+         
+          <a
+          href="/service.html"
+          class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+          >Services</a
+        >
+          <a
+            href="#pickup"
+            class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Pick-Up</a
+          >
+          <a
+            href="/map.html"
+            class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Interactive Map</a
+          >
+          <a
+            href="#process"
+            class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Recycling Process</a
+          >
+          <a
+            href="#educational"
+            class="text-green-800 font-bold hover:bg-green-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Educational Resources</a
+          >
+        </div>
+      </div>
+    </nav>
 
     <!-- Header Section -->
-    <header>
-        <h1>E-Waste Recycling Solutions</h1>
-        <p>Your partner in sustainable technology disposal</p>
+    <header class="bg-gradient-to-b from-white via-white to-trasnsparent">
+      <div
+        class="relative min-h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0"
+      >
+        <div class="md:px-20">
+          <div class="mx-auto flex flex-col">
+            <div class="flex flex-col">
+              <h1
+                class="xl:text-5xl md:text-4xl py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+              >
+                E-Waste Recycling Solutions
+              </h1>
+            </div>
+            
+            <p class="text-xl text-muted-foreground">
+              Your partner in sustainable technology disposal
+            </p>
+          </div>
+        </div>
+        <div
+          class="relative hidden h-screen flex-col bg-muted text-white lg:flex dark:border-r"
+        >
+          <img
+            src="/hero.webp"
+            class="relative bg-black object-cover w-full h-full z-20"
+            alt=""
+          />
+        </div>
+      </div>
     </header>
 
     <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#pickup">Pick-Up</a></li>
-            <li><a href="#map">Interactive Map</a></li>
-            <li><a href="#process">Recycling Process</a></li>
-            <li><a href="#educational">Educational Resources</a></li>
-        </ul>
-    </nav>
+    <!-- <nav>
+      <ul class="flex gap-4 px-4 
+        py-2 bg-green-500 text-white">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pickup">Pick-Up</a></li>
+        <li><a href="#map">Interactive Map</a></li>
+        <li><a href="#process">Recycling Process</a></li>
+        <li><a href="#educational">Educational Resources</a></li>
+      </ul>
+    </nav> -->
 
     <!-- Main Content Section -->
     <main>
-        <!-- Services Section -->
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>Explore our comprehensive e-waste recycling services.</p>
-            <!-- Include more content and visuals here -->
-        </section>
-
-        <!-- Pick-Up Request Form -->
-        <section id="pickup">
-            <h2>Pick-Up Request</h2>
-            <form action="#" method="POST">
-                <!-- Include form fields and submit button -->
+      <!-- Pick-Up Request Form -->
+      <section id="pickup" class="mt-10 px-4">
+        <h2
+          class="text-3xl text-center mb-4 py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+        >
+          Pick-Up Request
+        </h2>
+        <div >
+          <div class="flex-1">
+            <form
+              action="#"
+              method="POST"
+              class="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-8 shadow-lg p-10 rounded-lg"
+            >
+              <!-- Include form fields and submit button -->
+              <div class="sm:col-span-4">
+                <label
+                  for="email"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >Email</label
+                >
+                <div class="mt-2">
+                  <div
+                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                  >
+                    <input
+                      type="text"
+                      name="username"
+                      id="email"
+                      autocomplete="email"
+                      class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      placeholder="janesmith@gmail.com"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="sm:col-span-4">
+                <label
+                  for="name"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >Name</label
+                >
+                <div class="mt-2">
+                  <div
+                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                  >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      autocomplete="email"
+                      class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      placeholder="sam"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="sm:col-span-4">
+                <label
+                  for="phone"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                  >Phone</label
+                >
+                <div class="mt-2">
+                  <div
+                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                  >
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      autocomplete="email"
+                      class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      placeholder="1234567890"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="inline-flex mt-4 items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                >
+                  Submit
+                </button>
+              </div>
             </form>
-        </section>
+          </div>
+          <!-- <div>
+                        <div class="flex justify-center items-center">
+                            <img src="/assets/garbage.png" alt="images" class="object-cover border-none rounded-md shadow-lg">
+                        </div>
+                    </div> -->
+        </div>
+      </section>
 
-        <!-- Interactive Map Section -->
-        <section id="map">
-            <h2>Interactive Map</h2>
-            <!-- Include an interactive map (Google Maps, Leaflet, etc.) -->
-        </section>
+      <!-- Interactive Map Section -->
+      <section>
+        <h2
+          class="text-3xl text-center py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+        >
+          Interactive Map
+        </h2>
+        <!-- Include an interactive map (Google Maps, Leaflet, etc.) -->
+        <div
+          class="container relative w-full flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0 mx-auto md:mx-0"
+          id="map"
+          style="height: 300px"
+        ></div>
+      </section>
 
-        <!-- Recycling Process Section -->
-        <section id="process">
-            <h2>Recycling Process</h2>
-            <!-- Include visuals and descriptions of the recycling process -->
-        </section>
+      <!-- Recycling Process Section -->
+      <section id="process">
+        <div>
+          <div class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+            <h2
+              class="text-3xl text-center mb-4 py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+            >
+              Recycling Process
+            </h2>
 
-        <!-- Educational Resources Section -->
-        <section id="educational">
-            <h2>Educational Resources</h2>
-            <!-- Include articles, guides, and infographics -->
-        </section>
-    </main>
+            <div
+              class="grid grid-cols-1 gap-y-16 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
+            >
+              <!-- Stage 1: Collection -->
+              <div class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200"
+                >
+                  <img
+                    src="/assets/steps/2.jpg"
+                    alt="Collection"
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900">
+                  Collection
+                </h3>
+                <p class="mt-1 text-sm text-gray-700">
+                  E-waste is collected from various sources, including
+                  households, businesses, and electronic manufacturers.
+                </p>
+              </div>
+
+              <!-- Stage 2: Sorting -->
+              <div class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200"
+                >
+                  <img
+                    src="/assets/steps/1.jpg"
+                    alt="Sorting"
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900">Sorting</h3>
+                <p class="mt-1 text-sm text-gray-700">
+                  Collected e-waste is sorted into different categories based on
+                  the type of electronics.
+                </p>
+              </div>
+
+              <!-- Stage 3: Dismantling -->
+              <div class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200"
+                >
+                  <img
+                    src="/assets/steps/4.jpg"
+                    alt="Dismantling"
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900">
+                  Dismantling
+                </h3>
+                <p class="mt-1 text-sm text-gray-700">
+                  Electronics are dismantled to extract valuable components and
+                  separate them from hazardous materials.
+                </p>
+              </div>
+
+              <!-- Stage 4: Component Recovery -->
+              <div class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200"
+                >
+                  <img
+                    src="/assets/steps/4.jpg"
+                    alt="Component Recovery"
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900">
+                  Component Recovery
+                </h3>
+                <p class="mt-1 text-sm text-gray-700">
+                  Valuable components like metals, plastics, and circuit boards
+                  are recovered for recycling.
+                </p>
+              </div>
+
+              <!-- Stage 5: Hazardous Material Handling -->
+              <div class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200"
+                >
+                  <img
+                    src="/assets/steps/5.jpg"
+                    alt="Hazardous Material Handling"
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900">
+                  Hazardous Material Handling
+                </h3>
+                <p class="mt-1 text-sm text-gray-700">
+                  Hazardous materials, including lead and mercury, are carefully
+                  handled and disposed of according to regulations.
+                </p>
+              </div>
+
+              <!-- Stage 6: Recycling Completion -->
+              <div class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200"
+                >
+                  <img
+                    src="/assets/steps/6.jpg"
+                    alt="Recycling Completion"
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900">
+                  Recycling Completion
+                </h3>
+                <p class="mt-1 text-sm text-gray-700">
+                  The materials are processed, recycled, and reused,
+                  contributing to a more sustainable and eco-friendly approach.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Include visuals and descriptions of the recycling process -->
+      </section>
+
+      <!-- Educational Resources Section -->
+      <section id="educational">
+        <!-- Include articles, guides, and infographics -->
+        <div class="flex flex-col">
+          <div class="flex flex-col">
+            <h1
+              class="xl:text-5xl text-center md:text-4xl py-5 text-4xl bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-bold tracking-tight"
+            >
+              E-Waste Recycling Solutions
+            </h1>
+          </div>
+         
+          <div class="py-8">
+            <p class="text-center text-xl md:text-2xl">
+                Your partner in sustainable technology disposal
+            </p>
+          </div>
+       
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <!-- Cards -->
+            <div class="bg-white rounded-lg shadow-md">
+              <img
+                src="/assets/images/1-01.jpeg"
+                alt="images"
+                class="h-auto align-middle border-none rounded-md shadow-lg"
+              />
+              <div class="px-4 py-5">
+                <h2 class="text-2xl font-bold text-gray-800">
+                  Recycling Process
+                </h2>
+
+                <p class="mt-2 text-gray-600">
+                  Learn about our environmentally friendly e-waste recycling
+                  process.
+                </p>
+                <a href="#" class="mt-6 text-blue-500 hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+              <img
+                src="/assets/images/2-01.jpeg"
+                alt="images"
+                class="h-auto align-middle border-none rounded-md shadow-lg"
+              />
+              <div class="px-4 py-5">
+                <h2 class="text-2xl font-bold text-gray-800">
+                  Recycling Process
+                </h2>
+
+                <p class="mt-2 text-gray-600">
+                  Learn about our environmentally friendly e-waste recycling
+                  process.
+                </p>
+                <a href="#" class="mt-6 text-blue-500 hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+              <img
+                src="/assets/images/3-01.jpeg"
+                alt="images"
+                class="h-auto align-middle border-none rounded-md shadow-lg"
+              />
+              <div class="px-4 py-5">
+                <h2 class="text-2xl font-bold text-gray-800">
+                  Recycling Process
+                </h2>
+
+                <p class="mt-2 text-gray-600">
+                  Learn about our environmentally friendly e-waste recycling
+                  process.
+                </p>
+                <a href="#" class="mt-6 text-blue-500 hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+              <img
+                src="/assets/images/3-02.jpeg"
+                alt="images"
+                class="h-auto align-middle border-none rounded-md shadow-lg"
+              />
+              <div class="px-4 py-5">
+                <h2 class="text-2xl font-bold text-gray-800">
+                  Recycling Process
+                </h2>
+
+                <p class="mt-2 text-gray-600">
+                  Learn about our environmentally friendly e-waste recycling
+                  process.
+                </p>
+                <a href="#" class="mt-6 text-blue-500 hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+              <img
+                src="/assets/images/5-01.jpeg"
+                alt="images"
+                class="h-auto align-middle border-none rounded-md shadow-lg"
+              />
+              <div class="px-4 py-5">
+                <h2 class="text-2xl font-bold text-gray-800">
+                  Recycling Process
+                </h2>
+
+                <p class="mt-2 text-gray-600">
+                  Learn about our environmentally friendly e-waste recycling
+                  process.
+                </p>
+                <a href="#" class="mt-6 text-blue-500 hover:underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      </section>
+
+
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 E-Waste Recycling Solutions</p>
+      <p>&copy; 2024 E-Waste Recycling Solutions</p>
     </footer>
 
     <!-- JavaScript file -->
     <script src="script.js"></script>
-</body>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      integrity="sha256-..."
+      crossorigin="anonymous"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoidGVqYXMtZ2siLCJhIjoiY2xud3NsNmc5MGR2NDJtbXhnaDR5YXI4dSJ9.1xnoW8szgMdfpdq4sI7Yzg"
+
+      // Create map centered on a default location
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-74.5, 40], // Default center (New York City)
+        zoom: 9, // Default zoom level
+      })
+
+      // Use Geolocation API to get the user's current location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            var userLocation = [
+              position.coords.longitude,
+              position.coords.latitude,
+            ]
+
+            // Update map center to user's location
+            map.setCenter(userLocation)
+          },
+          function (error) {
+            console.error("Error getting user location:", error.message)
+          }
+        )
+      } else {
+        console.error("Geolocation is not supported by this browser.")
+      }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Services | ReCyx</title>
+  </head>
+  <body class="service min-h-screen grid">
+    <nav class="z-50 top-0 left-0 w-full h-16 backdrop-blur-md">
+        <div class="mx-auto">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button
+                type="button"
+                class="relative inline-flex items-center justify-center rounded-md p-2 text-green-400 hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <svg
+                  class="block h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+                <svg
+                  class="hidden h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            >
+              <div class="flex flex-shrink-0 items-center"></div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-green-900 text-white", Default: "text-green-800 font-bold hover:bg-green-700 hover:text-white" -->
+                  <a
+                    href="/index.html"
+                    class="bg-green-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                    aria-current="page"
+                    >Home</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div>
+      <div class="service-bg flex items-center justify-center">
+        <h1 class="text-center text-white font-bold text-5xl lg:text-7xl">
+          Services
+        </h1>
+      </div>
+      <div class="container mx-auto mb-20">
+        <div class="py-8">
+          <p class="text-center text-xl md:text-2xl">
+            Explore our comprehensive e-waste recycling services.
+          </p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 mx-auto w-11/12 md:w-3/4">
+            <div class="col-span-2">
+                <a href="/map.html">
+                    <img src="/assets/map.jpg" class="h-72 object-cover w-full" alt="Interactive Map" />
+                    <p class="glassmorph block p-2 rounded-md text-black">Interactive Map</p>
+                </a>
+            </div>
+          <div class="">
+            <img src="/assets/pickup.png" alt="Delivery guy picking up order" />
+            <p class="glassmorph p-2 rounded-md">Pick-Up Request</p>
+          </div>
+          <div class="">
+            <img src="/assets/recycle.jpg" alt="Dustbin with Recycle logo" />
+            <p class="glassmorph p-2 rounded-md">Recycling Process</p>
+          </div>
+          <div class="col-span-2">
+            <img
+             src="/assets/education.jpg"
+              alt="Library with a lot of books"
+              class="h-72 object-cover w-full"
+            />
+            <p class="glassmorph p-2 rounded-md">Educational Resources</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="mt-20">
+        <p>&copy; 2024 E-Waste Recycling Solutions</p>
+      </footer>
+  </body>
+  <!-- JavaScript file -->
+  <script src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    integrity="sha256-..."
+    crossorigin="anonymous"
+  />
+</html>

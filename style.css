@@ -1,50 +1,34 @@
 /* Reset some default styles */
-body,
-h1,
-h2,
-p,
-ul,
-li {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Arial", sans-serif;
+  min-height: 100vh;
+  background-image: url("/assets/bg.jpg");
+  background-repeat: no-repeat;
 }
 
-/* Basic styling for header, navigation, and main content */
-
-nav,
-main {
-  margin: 20px;
+.service-bg {
+  height: 40vh;
+  background-image: url("/assets/ewaste-service.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100vw;
+  background-position: 50%;
+  isolation: isolate;
 }
 
-nav {
-  background-color: #333;
-  padding: 10px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-}
-
-main {
-  background-color: #f9f9f9;
-  padding: 20px;
-}
-
-/* Style for footer */
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
+.service-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }

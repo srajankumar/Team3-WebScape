@@ -6,20 +6,39 @@
     <link rel="stylesheet" href="style.css" />
     <title>Services | ReCyx</title>
   </head>
-  <body class="min-h-screen">
-    <main class="container">
+  <body class="min-h-screen grid">
+    <main>
       <div class="service-bg flex items-center justify-center">
         <h1 class="text-center text-white font-bold text-5xl lg:text-7xl">
           Services
         </h1>
       </div>
-      <div>
-        <p>Explore our comprehensive e-waste recycling services.</p>
-        <div>
-          <p>Pick-Up Request</p>
-          <p>Interactive Map</p>
-          <p>Recycling Process</p>
-          <p>Educational Resources</p>
+      <div class="container mx-auto">
+        <div class="py-8">
+          <p class="text-center text-xl md:text-2xl">
+            Explore our comprehensive e-waste recycling services.
+          </p>
+        </div>
+        <div class="grid gap-2 md:grid-cols-2 mx-auto w-11/12 md:w-3/4">
+          <div class="">
+            <img src="/assets/pickup.png" alt="Delivery guy picking up order" />
+            <p class="glassmorph p-2 rounded-md">Pick-Up Request</p>
+          </div>
+          <div class="">
+            <img src="/assets/map.jpg" alt="Interactive Map" />
+            <p class="glassmorph p-2 rounded-md">Interactive Map</p>
+          </div>
+          <div class="">
+            <img src="/assets/recycle.jpg" alt="Dustbin with Recycle logo" />
+            <p class="glassmorph p-2 rounded-md">Recycling Process</p>
+          </div>
+          <div class="">
+            <img
+              src="/assets/education.jpg"
+              alt="Library with a lot of books"
+            />
+            <p class="glassmorph p-2 rounded-md">Educational Resources</p>
+          </div>
         </div>
       </div>
     </main>

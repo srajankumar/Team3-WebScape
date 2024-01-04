@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map | ReCyx</title>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mappy</title>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-</head>
-
-<body>
+  <body>
     <section id="map">
-        <h2>Interactive Map</h2>
-        <div id='map' style='width: 100%; height: 400px;'></div>
+      <h2>Interactive Map</h2>
+      <div id="map" style="width: 100%; height: 100vh"></div>
     </section>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoidGVqYXMtZ2siLCJhIjoiY2xud3NsNmc5MGR2NDJtbXhnaDR5YXI4dSJ9.1xnoW8szgMdfpdq4sI7Yzg';
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoidGVqYXMtZ2siLCJhIjoiY2xud3NsNmc5MGR2NDJtbXhnaDR5YXI4dSJ9.1xnoW8szgMdfpdq4sI7Yzg"
 
-        // Create map centered on a default location
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-74.5, 40], // Default center (New York City)
-            zoom: 9 // Default zoom level
-        });
+      // Create map centered on a default location
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-74.5, 40], // Default center (New York City)
+        zoom: 9, // Default zoom level
+      })
 
-        // Use Geolocation API to get the user's current location
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    var userLocation = [position.coords.longitude, position.coords.latitude];
+      // Use Geolocation API to get the user's current location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            var userLocation = [
+              position.coords.longitude,
+              position.coords.latitude,
+            ]
 
-                    // Update map center to user's location
-                    map.setCenter(userLocation);
-                },
-                function (error) {
-                    console.error('Error getting user location:', error.message);
-                }
-            );
-        } else {
-            console.error('Geolocation is not supported by this browser.');
-        }
+            // Update map center to user's location
+            map.setCenter(userLocation)
+          },
+          function (error) {
+            console.error("Error getting user location:", error.message)
+          }
+        )
+      } else {
+        console.error("Geolocation is not supported by this browser.")
+      }
     </script>
-</body>
-
+  </body>
 </html>

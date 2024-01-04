@@ -15,6 +15,7 @@ body {
 
 .service-bg {
   height: 40vh;
+  position: relative;
   background-image: url("/assets/ewaste-service.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,6 +68,7 @@ footer {
   background-color: #333;
   color: white;
 }
+
 .glassmorph {
   background: rgba(255, 255, 255, 0.21);
   border-radius: 16px;
@@ -74,4 +76,12 @@ footer {
   backdrop-filter: blur(4.1px);
   -webkit-backdrop-filter: blur(4.1px);
   border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+.service {
+  overflow-x: hidden;
 }
